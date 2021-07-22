@@ -1,5 +1,6 @@
 
 import { Punto } from "./punto";
+import { Triangulo } from './triangulo';
 
 let punto1 = new Punto(10,20);
 // Pruebo toString()
@@ -31,4 +32,30 @@ let arrP:Punto[] = [
                 new Punto (70,-18)
                     ];
 console.log(punto1.calcularMasCercano(arrP));
+
+// Pruebo Triangulo
+console.log("Pruebo Triangulo************");
+let nTriangulo:Triangulo = new Triangulo(
+                                    new Punto(20,10),
+                                    new Punto(60,12),
+                                    new Punto(45,-40)
+                                        );
+
+
+// Pruebo Triangulo
+console.log("Pruebo Gets************");
+console.log(nTriangulo.print());
+
+console.log("Pruebo Sets************");
+nTriangulo.setV1(new Punto(40,20));
+nTriangulo.setV2(new Punto(80,35));
+nTriangulo.setV3(new Punto(55,-50));
+console.log("Nuevos vertices: " + nTriangulo.print());
+
+console.log("Pruebo Calcular Longitud Lados************");
+console.log(nTriangulo.calcularLongitudLados());
+
+console.log("Lado 1: "+ new Punto(40,20).calcularDistancia(new Punto(80,35)) );
+console.log("Lado 2: "+ new Punto(80,35).calcularDistancia(new Punto(55,-50)) );
+console.log("Lado 3: "+ new Punto(55,-50).calcularDistancia(new Punto(40,20)) );
 
